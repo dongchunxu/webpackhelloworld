@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>test one</title>
+	<title><%= htmlWebpackPlugin.options.title%></title>
+
 </head>
 <body>
-	<!-- <script type="text/javascript" src="../dist/js/bundle.js"></script> -->
+
+	<% for (var key in htmlWebpackPlugin) { %>
+			<%=key%> : <%=JSON.stringify(htmlWebpackPlugin[key])%>
+	<% } %>
+
+	<% for (var key in htmlWebpackPlugin.options) { %>
+			<%=key%> : <%=JSON.stringify(htmlWebpackPlugin.options[key]) %>
+	<% } %>
+
+	<% for (var key in htmlWebpackPlugin.files) { %>
+			<%=key%> : <%=JSON.stringify(htmlWebpackPlugin.options[key]) %>
+	<% } %>
 </body>
 </html>
